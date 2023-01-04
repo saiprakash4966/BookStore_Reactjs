@@ -6,7 +6,7 @@ import Button from '@mui/material/Button';
 import { TextField } from '@mui/material';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { useState } from 'react';
-import { loginApi } from '../../services/userService';
+import { login, loginApi } from '../../services/userService';
 import { useNavigate } from "react-router-dom";
 
 
@@ -54,7 +54,7 @@ function SignIn(props) {
         }
 
         if (emailText === true && passwordText === true) {
-            loginApi(signInObj).then((response) => {
+            login(signInObj).then((response) => {
                 console.log(response)
             })
 

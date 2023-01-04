@@ -3,6 +3,8 @@ import './App.css';
 import SignIn from './components/SignIn/SignIn';
 import Lender from './pages/Lender/lender';
 import SignUp from './components/SignUp/SignUp';
+import Header from './components/header/header';
+import Book from './components/books/book';
 
 function App() {
   return (
@@ -23,7 +25,9 @@ function App() {
       </header> */}
       {/* <SignIn/> */}
       {/* <SignUp/> */}
-       <Lender/>
+       {/* <Lender/> */}
+       <Header/>
+       {/* <Book/> */}
     </div>
   );
 }
