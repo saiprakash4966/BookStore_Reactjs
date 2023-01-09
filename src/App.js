@@ -4,6 +4,9 @@ import SignIn from './components/SignIn/SignIn';
 import Lender from './pages/Lender/lender';
 import SignUp from './components/SignUp/SignUp';
 import Header from './components/header/header';
+import Books from './components/books/book';
+import Dashboard from './components/dashboard/dashboard';
+import BookHeader from './components/books/bookHeader';
 import Book from './components/books/book';
 
 function App() {
@@ -26,8 +29,11 @@ function App() {
       {/* <SignIn/> */}
       {/* <SignUp/> */}
        {/* <Lender/> */}
-       <Header/>
+       {/* <Header/> */}
+       {/* <Books/> */}
+       {/* <BookHeader/> */}
        {/* <Book/> */}
+       <Dashboard/>
     </div>
   );
 }
