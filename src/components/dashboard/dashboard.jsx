@@ -6,6 +6,7 @@ import { getBooksList } from '../../services/dataService';
 import Header from '../header/header';
 import BookHeader from '../books/bookHeader';
 import Book from '../books/book';
+import BookDetails from '../books/bookDetails';
 
 
 
@@ -13,8 +14,19 @@ function Dashboard() {
 
     const [toggle, setToggle] = useState(false);
     const [bookslist, setBookslist] = useState([]);
+    const [open, setOpen] = useState(false);
+    const [bookObj, setBookObj] = useState(false)
 
+    
 
+    const listenToTakeBookDetails = () => {
+        setBookObj(false)
+    }
+
+    
+    const listenToHeader = () => {
+        setToggle(!toggle)
+    }
 
 
     const getBooks = () => {
@@ -33,6 +45,7 @@ function Dashboard() {
     useEffect(() => {
         getBooks()
     }, [])
+    console.log(bookslist, 'fetching array')
 
 
 
@@ -44,13 +57,13 @@ function Dashboard() {
 
     return (
         <div>
-            <Header />
+            <Header listenToHeader={listenToHeader} />
             <BookHeader />
 
 
             <div style={{ width: '80vw', height: 'auto', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', marginLeft: '210px', gap: '15px 20px', marginTop: '15px' }}>
                 {
-                    bookslist.map((book) => (<Book getBooks={getBooks} book={book} />))
+                    bookObj ? <BookDetails listenToTakeBookDetails = { listenToTakeBookDetails }/> : bookslist.map((book) => (<Book getBooks={getBooks} book={book} />))
                 }
             </div>
 

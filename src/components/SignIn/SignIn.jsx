@@ -35,6 +35,10 @@ function SignIn(props) {
     const openSignup = () => {
         props.listenToSignIn()
     }
+    const signIn = () => {
+        props.listenToSignup()
+
+    }
     const submit = () => {
         console.log("submit", signInObj)
         let emailText = emailRegex.test(signInObj.email)
@@ -71,7 +75,7 @@ function SignIn(props) {
 
             <Box className='display'>
                 <Box className='login'>
-                    <h3>LOGIN</h3>
+                    <h3 onClick={signIn}>LOGIN</h3>
                     <h3 style={{ color: '#878787' }} onClick={openSignup}>SIGNUP</h3>
                 </Box>
                 <Box className='details'  >

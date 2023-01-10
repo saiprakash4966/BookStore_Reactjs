@@ -6,14 +6,18 @@ import './book.css';
 
 
 function Book(props) {
+    
+    const bookObj = () =>{
+        props.listenToTakeBook()
+    }
 
 
     return (
-        <Paper  elevation={1} >
+        <Paper  elevation={1} onClick={bookObj}>
         <Box className='book1'>
            
-            <Box >
-            <img src={bookObj1} alt='' />  
+            <Box style={{backgroundColor: '#00000029'}} >
+            <img src={bookObj1} alt=''  style={{marginTop:'20px'}}/>  
             </Box>
             <Box style={{alignItems:'flex-start',display:'flex', alignContent:'flex-start',flexWrap:'wrap',marginTop:'130px'}}>
                 <h5 className='name'>{props.book.bookName}</h5>
