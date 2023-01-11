@@ -1,25 +1,26 @@
 import axios from "axios";
 
 const headerConfig = {
-    Authorization : localStorage.getItem("token")
+    headers: { "x-access-token": localStorage.getItem('token') }
 }
 export const getBooksList = () => {
     let response = axios.get('https://bookstore.incubation.bridgelabz.com/bookstore_user/get/book', headerConfig)
     return response
     
 }
-export const addToCartApi = (data) =>
+export const addToCartApi = (id) =>
 {
-    let response = axios.post('https://bookstore.incubation.bridgelabz.com/bookstore_user/add_cart_item/{product_id}',data,headerConfig)
+    let response = axios.post(`https://bookstore.incubation.bridgelabz.com/bookstore_user/add_cart_item/${id.product_id}`,id,headerConfig)
     return response
 }
-export const cartItemApi = (data) =>
-{
-    let response = axios.put('https://bookstore.incubation.bridgelabz.com/bookstore_user/cart_item_quantity/{cartItem_id}',data,headerConfig)
+export const getcartBookList = () => {
+    let response = axios.get('https://bookstore.incubation.bridgelabz.com/bookstore_user/get_cart_items', headerConfig)
     return response
 }
-export const addToWishlistApi = (data) =>
+export const addToWishlistApi = (id) =>
 {
-    let response = axios.post('https://bookstore.incubation.bridgelabz.com/bookstore_user/add_wish_list/{product_id}',data,headerConfig)
+    let response = axios.post(`https://bookstore.incubation.bridgelabz.com/bookstore_user/add_wish_list/${id.product_id}`,id,headerConfig)
     return response
 }
+
+

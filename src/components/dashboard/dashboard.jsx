@@ -17,35 +17,45 @@ function Dashboard() {
     const [open, setOpen] = useState(false);
     const [bookObj, setBookObj] = useState(false)
 
-    
 
-    const listenToTakeBookDetails = () => {
-        setBookObj(false)
+    const listenToTakeBook = (obj) => {
+        setBookObj(true)
+        console.log(obj)
+        setOpen(obj)
+        console.log(open.bookName, "added book details")
+
+
     }
 
-    
+    const listenToTakeBookDetails = () => {
+        setBookObj(true)
+
+
+    }
+
+
     const listenToHeader = () => {
         setToggle(!toggle)
     }
 
 
-    const getBooks = () => {
-        getBooksList().then((response) => {
-            console.log(response)
-            setBookslist(response.data.result)
-
-        }
-        ).catch(
-            (error) => {
-                console.log(error)
-            }
-        )
-    }
 
     useEffect(() => {
-        getBooks()
+        getBooksList()
+            .then(res => {
+                console.log(res)
+                setBookslist(res.data.result)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+
     }, [])
     console.log(bookslist, 'fetching array')
+
+
+
+
 
 
 
@@ -63,12 +73,10 @@ function Dashboard() {
 
             <div style={{ width: '80vw', height: 'auto', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', marginLeft: '210px', gap: '15px 20px', marginTop: '15px' }}>
                 {
-                    bookObj ? <BookDetails listenToTakeBookDetails = { listenToTakeBookDetails }/> : bookslist.map((book) => (<Book getBooks={getBooks} book={book} />))
+                    bookObj ? <BookDetails listenToTakeBookDetails={listenToTakeBookDetails} id={open._id} bookName={open.bookName} author={open.author} quantity={open.quantity} discountPrice={open.discountPrice} price={open.price} description={open.description} /> : bookslist.map((book) => (<Box onClick={() => listenToTakeBook(book)}><Book key={book._id} book={book} /></Box>))
+
                 }
             </div>
-
-
-
 
 
         </div>

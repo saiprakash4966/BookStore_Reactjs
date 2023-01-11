@@ -5,8 +5,7 @@
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border-radius: 3px;
     opacity: 1;
-    margin-left: 15%;
-    margin-top: 7%;
+    
 }
 
 .details-img {
@@ -21,11 +20,20 @@
     margin-top: 5%;
 }
 
+
 .details-cart {
     margin-top: 10%;
     flex-direction: row;
     justify-content: space-between;
-    gap: 20px;
+    gap: 5px;
+    margin-left: -42%;
+}
+.details-wishlist{
+    margin-top: -14%;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 5px;
+    margin-left: 55%; 
 }
 
 .details-rates {
@@ -41,8 +49,8 @@
 }
 
 .details-rate {
-    margin-top: 8%;
-    margin-left: -40%;
+    margin-top: 15%;
+    margin-left: -5%;
     font: normal normal normal 20px/13px Roboto;
 }
 
@@ -55,18 +63,18 @@
     letter-spacing: 0px;
     color: #878787;
     opacity: 1;
-    margin-left: 65%;
-    margin-top: -5%;
+    margin-left: 75%;
+    margin-top: -8%;
 }
 
 .bookdetails-typography {
-    width: 350%;
+    width: 400%;
     height: 25%;
     margin-top: -15%;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 1px solid #E2E2E2;
     border-radius: 3px;
-    margin-left: 15%;
+    margin-left: 35%;
     overflow-y: scroll;
 }
 
@@ -89,4 +97,8 @@
     border: 1px solid #D1D1D1;
     border-radius: 0px 1px 1px 1px;
     opacity: 1;
+}
+.addIcon{
+    width: '40%';
+    background:'#333333 !important',
 }

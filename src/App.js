@@ -10,6 +10,7 @@ import BookHeader from './components/books/bookHeader';
 import Book from './components/books/book';
 import BookDetails from './components/books/bookDetails';
 import RouterTwo from './components/router/router';
+import Counter from './components/counter/counter';
 
 function App() {
   return (
@@ -35,9 +36,10 @@ function App() {
        {/* <Books/> */}
        {/* <BookHeader/> */}
        {/* <Book/> */}
-       {/* <Dashboard/> */}
+       <Dashboard/>
        {/* <BookDetails/> */}
-       <RouterTwo/>
+       {/* <RouterTwo/> */}
+       {/* <Counter/> */}
 
     </div>
   );
