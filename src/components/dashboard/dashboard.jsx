@@ -1,7 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from "react";
 import Box from '@mui/material/Box';
-import Books from '../books/book';
 import { getBooksList } from '../../services/dataService';
 import Header from '../header/header';
 import BookHeader from '../books/bookHeader';

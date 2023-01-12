@@ -49,9 +49,7 @@ const Search = styled('div')(({ theme }) => ({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor:'#FCFCFC',
-    ['@media only screen and (min-width :481px) and (max-width :768px)']:{
-      zIndex:'1',
-    }
+   
     
     
   }));

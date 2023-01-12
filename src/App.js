@@ -11,6 +11,8 @@ import Book from './components/books/book';
 import BookDetails from './components/books/bookDetails';
 import RouterTwo from './components/router/router';
 import Counter from './components/counter/counter';
+import Cart from './components/cart/cart';
+
 
 function App() {
   return (
@@ -40,6 +42,7 @@ function App() {
        {/* <BookDetails/> */}
        {/* <RouterTwo/> */}
        {/* <Counter/> */}
+       {/* <Cart/> */}
 
     </div>
   );

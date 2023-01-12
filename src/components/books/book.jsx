@@ -1,6 +1,6 @@
 import { Box, Paper } from '@mui/material'
 import React from 'react'
-import bookObj1 from '../images/component.png';
+import bookObj1 from '../../images/GroupDiscussion.png';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import './book.css';
 

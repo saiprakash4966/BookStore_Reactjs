@@ -21,7 +21,7 @@ function Counter(props) {
   return (
     <div>
        
-        <Button onClick={submit}><ControlPointIcon onClick={handleClick1}/> {counter} <RemoveCircleOutlineIcon  onClick={handleClick2}/></Button>
+        <Button onClick={submit}>  <RemoveCircleOutlineIcon  onClick={handleClick2}/>{counter}<ControlPointIcon onClick={handleClick1}/></Button>
     </div>
   )
 }
