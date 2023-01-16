@@ -1,44 +1,37 @@
-import React from 'react';
-import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
-import img from '../../images/component.png';
-import Button from '@mui/material/Button';
-
-
-
+import { Box, Button } from '@mui/material'
+import React from 'react'
+import './order.css'
+import book1 from '../../images/component.png';
 
 function Order() {
 
 
+
+
     return (
-        <Paper className=''>
-
-            <Box className=''>
-                <Box className='' key="9"></Box>
-                <span style={{ position: 'relative', right: '350px' }}>Order Summary</span>
-                <Box className='' ></Box>
-
-                <Box className='' >
-                    <Box className=''>
-                        <img key="12" src={img} alt="img" width='10%' height='10%' style={{ position: 'relative', top: '8px' }} />
-                    </Box>
-                    <Box className=''>
-                        <span style={{ font: ' normal normal normal 16px/20px Lato', color: '#0A0102', }} key="11"></span>
-                        <span style={{ font: ' normal normal normal 13px/16px Lato', color: '#9D9D9D', }} key="14"></span>
-                        <Box className=''>
-                            <span style={{ font: ' normal normal normal 15px/18px Lato', color: '#0A0102', }} key="15"></span>
-                            <span style={{ font: ' normal normal normal 12px/15px Lato', color: '#9D9D9D', textDecoration: 'line-through', }} key="16"></span>
-                        </Box>
+        <div>
+            <Box className='order-box'>
+                <p style={{ marginRight: '610px', opacity: '1' }}>Order Summary</p>
+                <Box style={{ marginRight: '610px', marginTop: '20px', opacity: '1' }}>
+                    <img src={book1} alt='' className='order-img' />
+                </Box>
+                <Box className='order-align'>
+                    <Box>
+                        <p style={{ fontWeight: 'bold', opacity: '1', marginTop: '-10px' }}>Don't Make MeThink</p>
+                        <p className='order-author' style={{ opacity: '1', marginTop: '-10px', marginLeft: '1px' }} >By Steve Krug</p>
+                    </Box><Box>
+                        <p className='order-rate' style={{ opacity: '1', marginTop: '-5px', marginLeft: '-40px' }}>(2000)</p>
+                        <p className='order-price' style={{ opacity: '1', marginTop: '-30px', marginLeft: '60px' }}>Rs.1500</p>
                     </Box>
                 </Box>
-                <Button variant="contained" sx={{
-                    background: ' #3371B5 0% 0% no-repeat padding-box', borderRadius: '3px',
-                    position: 'relative', left: '350px', top: '10px'
-                }} onClick='' >Checkout</Button>
-                <Box className='' ></Box>
+                <Box style={{ marginLeft: '600px', border: '1px solid #3371B5', width: '150px', borderRadius: '3px', marginTop: '80px' }}>
+                    <Button fullWidth variant="contained" className='address-continue' onClick=''>CHECKOUT</Button>
+                </Box>
+
+
             </Box>
-        </Paper>
-    );
+        </div>
+    )
 }
 
-export default Order;
+export default Order

@@ -12,6 +12,8 @@ import BookDetails from './components/books/bookDetails';
 import RouterTwo from './components/router/router';
 import Counter from './components/counter/counter';
 import Cart from './components/cart/cart';
+import Address from './components/cart/address';
+import Order from './components/cart/order';
 
 
 function App() {
@@ -38,11 +40,13 @@ function App() {
        {/* <Books/> */}
        {/* <BookHeader/> */}
        {/* <Book/> */}
-       <Dashboard/>
+       {/* <Dashboard/> */}
        {/* <BookDetails/> */}
        {/* <RouterTwo/> */}
        {/* <Counter/> */}
-       {/* <Cart/> */}
+       <Cart/>
+       {/* <Address/> */}
+       {/* <Order/> */}
 
     </div>
   );

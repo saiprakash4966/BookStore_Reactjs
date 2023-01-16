@@ -1,87 +1,83 @@
-import React from 'react';
-import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
+import { Box, Button } from '@mui/material'
+import React from 'react'
+import './address.css'
 import TextField from '@mui/material/TextField';
-import TextareaAutosize from '@mui/material/TextareaAutosize';
-import Button from '@mui/material/Button';
+import { useState } from 'react';
 
 
 
 
+function Address(props) {
+    const [orders, setOrders] = useState(false)
 
-function Address() {
-
+    const listenToOrders = () => {
+        setOrders(true)
+       props.listenToAddressDetails()
+    }
+   
     return (
-        <Paper elevation={0} className=''>
-
-            <Box className=''>
-                <Box className='' ></Box>
-                <Box className=''>
-                    <span style={{ font: ' normal normal medium 18px/24px Roboto', color: '#333232' }} >Customer Details</span>
-                    <Button variant="outlined" sx={{
-                        background: '#FFFFFF 0% 0% no-repeat padding-box', borderRadius: '2px',
-                        color: '#A03037', font: 'normal normal normal 12px/16px Roboto', border: '1px solid #A03037'
-                    }}>Add New address</Button>
+        <div >
+            <Box className='address-box'>
+                <p className='address-customer'>Customer Details</p>
+                <Box><Button className='address-new' style={{ color: '#A03037', border: '1px solid #A03037' }}>Add New Address</Button></Box>
+                <Box style={{ marginLeft: '-180px' }}>
+                    <TextField className='address-name' style={{ marginLeft: '20px', width: '251px' }}
+                        required
+                        id="outlined-required"
+                        label="Full Name"
+                    />
+                    <TextField className='address-number' style={{ marginLeft: '20px', width: '251px' }}
+                        required
+                        id="outlined-required"
+                        label="Phone Number"
+                    /></Box>
+                <Box>
+                    <p className='address-work'>1.WORK</p>
                 </Box>
-                <Box className=''>
-                    <TextField id="outlined-basic" label="Full Name" variant="outlined" size='small' />
-                    <TextField id="outlined-basic" label="Mobile Number" variant="outlined" size='small' />
+                <Box>
+                    <p className='address-p'>Address</p>
+                    <TextField className='address-input' style={{ marginLeft: '-160px' }} />
                 </Box>
-                <Box className=''>
-                    <Box>
-                        <span>Type</span>
-                    </Box>
-                    <Box className='' onChange=''>
-                        <Box className=''>
-                            <input type="radio" name="type" key="1" id="Home" value="Home" />
-                            <lable style={{ font: 'normal normal medium 15px/20px Roboto', color: '#0A0102' }}> Home </lable>
-                        </Box>
-                        <Box className=''>
-                            <input type="radio" name='type' id='Office' value='Office' key="2" />
-                            <lable style={{ font: 'normal normal medium 15px/20px Roboto', color: '#0A0102' }}> Office</lable>
-                        </Box>
-                        <Box className=''>
-                            <input type="radio" name='type' id='other' value='Other' key="3" />
-                            <lable style={{ font: 'normal normal medium 15px/20px Roboto', color: '#0A0102' }}> other </lable>
-                        </Box>
-                    </Box>
-                    <Box className='' ></Box>
-                </Box>
-                <Box className=''>
-                    <span style={{ font: 'normal normal medium 15px/20px Roboto', color: '#0A0102' }}>1.  </span>
-                    <span style={{ font: 'normal normal medium 12px/16px Roboto', color: '#A03037', position: 'relative', left: '50px' }}>Edit</span>
-                </Box>
-                <Box className=''>
-                    <span style={{ font: 'normal normal normal 12px/16px Roboto', color: '#0A0102' }}>Address</span>
-                    <TextareaAutosize
-                        onChange=''
-                        aria-label="empty textarea"
-                        key="7"
-                        placeholder=""
-                        style={{ width: 550, height: 60, background: ' #F5F5F5 0% 0% no-repeat padding-box', font: 'normal normal normal 15px/18px Roboto', color: '#0A0102' }}
+                <Box>
+                    <TextField className='address-city' style={{ marginLeft: '-160px', width: '251px' }}
+                        required
+                        id="outlined-required"
+                        label="City/Town"
+                    />
+                    <TextField className='address-state' style={{ marginLeft: '20px', width: '251px' }}
+                        required
+                        id="outlined-required"
+                        label="State"
                     />
                 </Box>
-                <Box className=''>
-                    <Box className=''>
-                        <span style={{ font: 'normal normal normal 12px/16px Roboto', color: '#0A0102' }}>City/Town</span>
-                        <TextField onChange='' id="outlined" placeholder='' variant="outlined" size='small' key="5" style={{ background: '#F5F5F5 0% 0% no-repeat padding-box', borderRadius: '2px', font: 'normal normal normal 12px/16px Roboto' }} />
-                    </Box>
-                    <Box className=''>
-                        <span style={{ font: 'normal normal normal 12px/16px Roboto', color: '#0A0102' }}>State</span>
-                        <TextField onChange='' id="outlined" placeholder="" variant="outlined" size='small' key="6" sx={{ background: '#F5F5F5 0% 0% no-repeat padding-box', borderRadius: '2px', font: 'normal normal normal 12px/16px Roboto' }} />
-                    </Box>
+                <Box>
+                    <p className='address-home'>Type</p>
                 </Box>
-
-
-                <Box className=''>
-
-                    <Button variant="contained" onClick='' sx={{ background: ' #3371B5 0% 0% no-repeat padding-box', borderRadius: '3px' }}>Continue</Button>
-
-
+                <Box className='address-type'>
+                <Box>
+                <input type="radio" name="type" key="1" id="Home" value="Home"  />
+                <lable style={{font: 'normal normal medium 15px/20px Roboto',color: '#0A0102'}}> Home </lable>
                 </Box>
+                <Box>
+                <input type="radio" name='type' id='Office' value='Office' key="2" />
+                <lable style={{font: 'normal normal medium 15px/20px Roboto',color: '#0A0102'}}> Office</lable>
+                </Box>
+                <Box>
+                <input type="radio" name='type' id='other' value='Other' key="3" />
+                <lable style={{font: 'normal normal medium 15px/20px Roboto',color: '#0A0102'}}> other </lable>
+                </Box>
+                </Box>
+                {
+                   orders ? null
+                        :
+                        <Box style={{ marginLeft: '600px', border: '1px solid #3371B5', width: '150px', borderRadius:'3px',marginTop:'60px' }}>
+                            <Button fullWidth variant="contained" className='address-continue' onClick={listenToOrders}>CONTINUE</Button>
+                        </Box>
+                }
+
             </Box>
-        </Paper>
-    );
+        </div>
+    )
 }
 
-export default Address;
+export default Address
