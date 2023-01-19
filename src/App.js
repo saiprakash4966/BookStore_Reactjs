@@ -9,11 +9,13 @@ import Dashboard from './components/dashboard/dashboard';
 import BookHeader from './components/books/bookHeader';
 import Book from './components/books/book';
 import BookDetails from './components/books/bookDetails';
-import RouterTwo from './components/router/router';
 import Counter from './components/counter/counter';
 import Cart from './components/cart/cart';
 import Address from './components/cart/address';
 import Order from './components/cart/order';
+import RouterTwo from './pages/router/Router';
+import MyWishlist from './components/wishlist/myWishList';
+
 
 
 function App() {
@@ -42,11 +44,13 @@ function App() {
        {/* <Book/> */}
        {/* <Dashboard/> */}
        {/* <BookDetails/> */}
-       {/* <RouterTwo/> */}
+       <RouterTwo/>
        {/* <Counter/> */}
-       <Cart/>
+       {/* <Cart/> */}
        {/* <Address/> */}
        {/* <Order/> */}
+       {/* <MyWishlist/> */}
+       
 
     </div>
   );

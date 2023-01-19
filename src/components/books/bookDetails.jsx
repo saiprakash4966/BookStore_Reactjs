@@ -82,6 +82,7 @@ function BookDetails(props) {
         })
         console.log(input)
     }
+    
 
 
 
@@ -102,11 +103,11 @@ function BookDetails(props) {
                         cart ? (
                             <Box>
                                 <Box style={{}}>
-                                    <Box onClick={decrement} style={{ marginLeft: '-90px', marginTop: '10px' }}>
+                                    <Box onClick={() => decrement(props._id, props.quantityToBuy)} style={{ marginLeft: '-90px', marginTop: '10px' }}>
                                         <RemoveCircleOutlinedIcon />
                                     </Box>
                                     <p style={{ marginTop: '-25px', marginLeft: '-50px' }}>{count}</p>
-                                    <Box onClick={increment} style={{ marginTop: '-40px', marginLeft: '-10px' }} >
+                                    <Box onClick={() => increment(props._id, props.quantityToBuy)} style={{ marginTop: '-40px', marginLeft: '-10px' }} >
                                         <AddCircleOutlinedIcon />
                                     </Box>
                                 </Box>

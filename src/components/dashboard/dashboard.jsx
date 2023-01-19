@@ -6,6 +6,7 @@ import Header from '../header/header';
 import BookHeader from '../books/bookHeader';
 import Book from '../books/book';
 import BookDetails from '../books/bookDetails';
+import Pagination from '../pagination/pagination';
 
 
 
@@ -15,12 +16,19 @@ function Dashboard() {
     const [bookslist, setBookslist] = useState([]);
     const [open, setOpen] = useState(false);
     const [bookObj, setBookObj] = useState(false)
+    const [visible, setVisible] = useState(false)
+    const [currentPage, setCurrentPage] = useState(1);
+    const [PostperPage, setPostperPage] = useState(4);
+
+    const lastPostIndex = currentPage * PostperPage;
+    const firstPostIndex = lastPostIndex - PostperPage;
+    const currentPosts = bookslist.slice(firstPostIndex, lastPostIndex);
 
 
     const listenToTakeBook = (obj) => {
         setBookObj(true)
         console.log(obj)
-        setOpen(obj)
+        setVisible(true)
         console.log(open.bookName, "added book details")
 
 
@@ -28,6 +36,7 @@ function Dashboard() {
 
     const listenToTakeBookDetails = () => {
         setBookObj(true)
+        setVisible(true)
 
 
     }
@@ -70,12 +79,27 @@ function Dashboard() {
             <BookHeader />
 
 
-            <div style={{ width: '80vw', height: 'auto', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', marginLeft: '210px', gap: '15px 20px', marginTop: '15px' }}>
+            <div style={{ width: '80vw', height: 'auto', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', marginLeft: '40px', gap: '15px 20px', marginTop: '15px' }}>
                 {
-                    bookObj ? <BookDetails listenToTakeBookDetails={listenToTakeBookDetails} id={open._id} bookName={open.bookName} author={open.author} quantity={open.quantity} discountPrice={open.discountPrice} price={open.price} description={open.description} /> : bookslist.map((book) => (<Box onClick={() => listenToTakeBook(book)}><Book key={book._id} book={book} /></Box>))
+                    bookObj ? <BookDetails listenToTakeBookDetails={listenToTakeBookDetails} id={open._id} bookName={open.bookName} author={open.author} quantity={open.quantity} discountPrice={open.discountPrice} price={open.price} description={open.description} /> :
+                        <div style={{ width: '80vw', height: 'auto', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', marginLeft: '210px', gap: '15px 20px', marginTop: '15px' }}>
+                            {
+                                currentPosts.map((book) => (<Box onClick={() => listenToTakeBook(book)}><Book key={book._id} book={book} /></Box>))}
+                        </div>
 
                 }
             </div>
+
+
+            {visible ? null :
+                (<Box style={{  marginLeft: '50px', marginTop: '150px' }}>
+                    <Pagination
+                        totalPosts={bookslist.length}
+                        postsPerPage={PostperPage}
+                        setCurrentPage={setCurrentPage}
+                        currentPage={currentPage} />
+                </Box>)
+            }
 
 
         </div>
