@@ -71,13 +71,13 @@ function MyWishlist(props) {
                                     <Box className='booknamewish'>
                                         <Box className='booktitlewish'>
                                             <Box>
-
+                                            {/* {book.product_id.bookName} */}
                                                 Dont Make Me Think
                                             </Box>
                                         </Box>
                                         <Box className='bookAuthorwish'><span>by Saiprakash</span></Box>
                                         <Box className='bookpricewish'>
-                                            <Box className='discountwish'>Rs.500 </Box>
+                                            <Box className='discountwish'>Rs.600</Box>
                                             <Box className='pricewish'>Rs.1000 </Box>
                                         </Box>
                                     </Box>

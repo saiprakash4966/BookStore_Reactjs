@@ -1,11 +1,11 @@
 .bookdetails-main {
     width: 80vw;
-    height: 70vh;
+    height: 62.5vh;
     display: flex;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border-radius: 3px;
     opacity: 1;
-    margin-left: 0%;
+    margin-left: 2%;
     margin-top: 1%;
 }
 
@@ -68,7 +68,7 @@
 }
 
 .bookdetails-typography {
-    width: 520%;
+    width: 500%;
     height: 25%;
     margin-top: -15%;
     background: #FFFFFF 0% 0% no-repeat padding-box;

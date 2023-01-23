@@ -1,11 +1,16 @@
+import { Button } from '@mui/material';
 import React from 'react';
-import './pagination.css';
+
+
+
 
 const Pagination = ({
     totalPosts,
     postsPerPage,
     setCurrentPage,
     currentPage,
+    previousPage,
+    nextPage
 }) => {
     let pages = [];
 
@@ -15,16 +20,22 @@ const Pagination = ({
 
     return (
         <div className='pagination'>
+            <Button onClick={previousPage} >
+               Prev
+            </Button>
             {pages.map((page, index) => {
                 return (
-                    <button
+                    <Button
                         key={index}
                         onClick={() => setCurrentPage(page)}
                         className={page === currentPage ? "active" : ""}>
                         {page}
-                    </button>
+                    </Button>
                 );
             })}
+            <Button onClick={nextPage} >
+               Next
+            </Button>
         </div>
     );
 };

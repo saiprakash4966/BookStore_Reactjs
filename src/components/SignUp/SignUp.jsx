@@ -57,7 +57,7 @@ function SignUp(props) {
         let phoneText = phoneRegex.test(signupObj.phone)
 
         if (fullNameText === false) {
-            setregexObj((prevState) => ({ ...prevState, fullNameBorder: true, fullNameHelper: "Enter correct email" }))
+            setregexObj((prevState) => ({ ...prevState, fullNameBorder: true, fullNameHelper: "Enter correct Name" }))
         }
         else if (fullNameText === true) {
             setregexObj((prevState) => ({ ...prevState, fullNameBorder: false, fullNameHelper: "" }))

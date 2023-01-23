@@ -28,6 +28,7 @@ function Cart(props) {
     setAddressToggle(true)
 
   }
+  
   const listenToAddress = () => {
     setAddressToggle(true)
 
@@ -104,12 +105,12 @@ function Cart(props) {
 
     <Paper elevation={0}>
       <Header/>
-      <Box style={{ width: '55vw', height: 'auto', border: '1px solid #DCDCDC', borderRadius: '1px', marginLeft: '240px', marginTop: '50px', background: '#FFFFFF 0% 0% no-repeat padding-box', opacity: '1', flex: 'wrap', flexDirection: 'column' }}>
+      <Box style={{ width: '55vw', height: 'auto', border: '1px solid #DCDCDC', borderRadius: '1px', marginLeft: '240px', marginTop: '50px', background: '#FFFFFF 0% 0% no-repeat padding-box', opacity: '1', flex: 'wrap', flexDirection: 'column'}}>
         <Box >
           <Box >
 
             <p style={{ marginRight: '720px', marginTop: '10px', fontWeight: 'bold', opacity: '1' }} >My cart(1)</p>
-            <Box className='mycart-icon' style={{ marginTop: '-8px', marginLeft: '490px', opacity: '1' }}><RoomIcon style={{ marginTop: '-8px' }} /> </Box>
+            <Box className='mycart-icon' style={{ marginTop: '-8px', marginLeft: '490px', opacity: '1' }}><RoomIcon style={{ marginTop: '-8px' ,marginLeft : '35px' }} /> </Box>
             <Box><TextField sx={{ width: '30ch', height: '10ch', marginLeft: '460px', marginTop: '-45px', opacity: '1' }}>
             </TextField>
               <p style={{ marginLeft: '475px', marginTop: '-70px', opacity: '1' }}>BridgeLabz Solutions LLP, No...</p>
@@ -162,7 +163,7 @@ function Cart(props) {
       {
         addressToggle ? <Address listenToAddressDetails={listenToAddressDetails} />
           :
-          <Box style={{ width: '778px', height: '50px', borderRadius: '1px', marginLeft: '240px', marginTop: '10px', border: '1px solid #DCDCDC' }}>
+          <Box style={{ width: '845px', height: '50px', borderRadius: '1px', marginLeft: '240px', marginTop: '10px', border: '1px solid #DCDCDC' }}>
             <p className='mycart-address' listenToAddress={listenToAddress}>Address Details</p>
           </Box>
       }
@@ -170,7 +171,7 @@ function Cart(props) {
       {
         orderToggle ? <Order listenToOrderDetails={listenToOrderDetails} />
           :
-          <Box style={{ width: '778px', height: '50px', border: '1px solid #DCDCDC', borderRadius: '1px', marginLeft: '240px', marginTop: '10px' }}>
+          <Box style={{ width: '845px', height: '50px', border: '1px solid #DCDCDC', borderRadius: '1px', marginLeft: '240px', marginTop: '10px' }}>
             <p className='mycart-order' listenToOrder={listenToOrder} >Order Summary</p>
           </Box>
       }

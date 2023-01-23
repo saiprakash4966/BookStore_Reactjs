@@ -16,6 +16,7 @@ import { addToCartApi, addToWishlistApi, UpdateCartApi } from '../../services/da
 
 
 
+
 function BookDetails(props) {
     const [cart, setCart] = useState(false)
     const [wishList, setWishList] = useState(false)
@@ -141,7 +142,7 @@ function BookDetails(props) {
                         </Box>
                     </h6></div>
                 <Box className='bookdetails-typography'>
-                    <p style={{ marginLeft: '-500px', marginTop: '20px', font: 'normal normal normal 15px/13px Roboto', color: '#333232' }}>Book Detail</p>
+                    <p style={{ marginLeft: '-580px', marginTop: '20px', font: 'normal normal normal 15px/13px Roboto', color: '#333232' }}>Book Detail</p>
                 </Box>
                 <Box style={{ marginTop: '-10px', font: 'normal normal normal 15px/13px Roboto', color: '#333232', marginLeft: '10px' }}>
                     <h4>Customer Feedback</h4>

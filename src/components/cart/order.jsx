@@ -56,19 +56,19 @@ function Order() {
     return (
         <div>
             <Box className='order-box'>
-                <p style={{ marginRight: '610px', opacity: '1' }}>Order Summary</p>
+                <p style={{ marginRight: '650px', opacity: '1' }}>Order Summary</p>
                 {bookOrder.map((book) =>
                 (<Box book={book}>
                     <Box style={{ height: '130px', justifyContent: 'space-between' }}>
-                        <Box style={{ marginRight: '610px', marginTop: '20px', opacity: '1', justifyContent: 'space-between', flexDirection: 'column', columnGap: '40px' }}>
+                        <Box style={{ marginRight: '650px', marginTop: '20px', opacity: '1', justifyContent: 'space-between', flexDirection: 'column', columnGap: '40px' }}>
                             <img src={book1} alt='' className='order-img' />
                         </Box>
                         <Box className='order-align'>
                             <Box>
                                 <p style={{ fontWeight: 'bold', opacity: '1', marginTop: '-10px' }}>{book.product_id.bookName}</p>
-                                <p className='order-author' style={{ opacity: '1', marginTop: '-10px' }} >By {book.product_id.author}</p>
+                                <p className='order-author' style={{ opacity: '1', marginTop: '-5px' }} >By {book.product_id.author}</p>
                             </Box><Box>
-                                <p className='order-rate' style={{ opacity: '1', marginTop: '-5px' }}>Rs.({book.product_id.discountPrice})</p>
+                                <p className='order-rate' style={{ opacity: '1', marginTop: '5px' }}>Rs.({book.product_id.discountPrice})</p>
                                 <p className='order-price' style={{ opacity: '1', marginTop: '-33px' }}>Rs.{book.product_id.price}</p>
                             </Box>
                         </Box>
