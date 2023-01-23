@@ -97,6 +97,9 @@ function Cart(props) {
   }
 
   console.log(bookcart)
+  const autoRefresh = () => {
+    cartItemListApi()
+}
 
   useEffect(() => {
     getCart()
