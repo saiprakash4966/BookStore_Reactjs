@@ -14,7 +14,7 @@ import Cart from './components/cart/cart';
 import Address from './components/cart/address';
 import Order from './components/cart/order';
 import RouterTwo from './pages/router/Router';
-import MyWishlist from './components/wishlist/myWishList';
+
 
 
 
@@ -49,7 +49,7 @@ function App() {
        {/* <Cart/> */}
        {/* <Address/> */}
        {/* <Order/> */}
-       {/* <MyWishlist/> */}
+       
        
 
     </div>

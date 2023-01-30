@@ -1,5 +1,5 @@
 import React from 'react';
-import './bookHeader.css';
+// import './bookHeader.css';
 import Box from '@mui/material/Box';
 import { useState } from "react";
 import ListSubheader from '@mui/material/ListSubheader';
@@ -10,10 +10,49 @@ import ListItemText from '@mui/material/ListItemText';
 import Collapse from '@mui/material/Collapse';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
+import { makeStyles } from '@mui/styles';
+
+
+const useStyles = makeStyles({
+    bookhead: {
+        width: '70vw',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        alignContent: 'space-between',
+        position: 'relative',
+        left: '195px',
+    },
+    books: {
+        marginLeft: '0%',
+        fontSize: '20px',
 
 
 
+    },
+    total:
+    {
+        marginLeft: '-47%',
+        fontSize: '12px'
+
+
+    },
+    ['@media only screen and (min-width:769px) and (max-width:1024px)']:
+    {
+        total:
+        {
+
+            marginLeft: '1%',
+            fontSize: '10px',
+            
+
+        },
+
+    },
+
+})
 function BookHeader() {
+    const classes = useStyles()
 
     const [sort, setSort] = useState('');
 
@@ -24,11 +63,13 @@ function BookHeader() {
 
 
     return (
-        <Box className='bookhead'>
-            <Box className='books'>Books</Box>
+        <Box className={classes.bookhead}>
+            <Box className={classes.books}>Books</Box>
+
+            <Box className={classes.total}>(128 items)</Box>
 
             <List
-                sx={{ width: '80vw', height : '5vh', maxWidth: 250, bgcolor: 'background.paper', marginLeft: '200px', marginTop: '20px' }}
+                sx={{ width: '80vw', height: '5vh', maxWidth: 250, bgcolor: 'background.paper', marginLeft: '200px', marginTop: '20px' }}
                 component="nav"
                 aria-labelledby="nested-list-subheader"
                 subheader={
@@ -41,7 +82,7 @@ function BookHeader() {
                     <ListItemIcon>
 
                     </ListItemIcon>
-                    <ListItemText primary="Sort By relevance" />
+                    <ListItemText primary="Sort By relevance" className='sort' />
                     {sort ? <ExpandLess /> : <ExpandMore />}
                 </ListItemButton>
                 <Collapse in={sort} timeout="auto" unmountOnExit>
@@ -53,7 +94,7 @@ function BookHeader() {
                         </ListItemButton>
                     </List>
                 </Collapse>
-                
+
             </List>
 
         </Box>

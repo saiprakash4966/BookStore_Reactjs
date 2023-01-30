@@ -1,11 +1,71 @@
 import { Box, Button } from '@mui/material'
 import React, { useEffect, useState } from 'react'
-import './order.css'
+// import './order.css'
 import book1 from '../../images/component.png';
 import { useNavigate } from 'react-router-dom';
 import { addToOrder, cartItemListApi } from '../../services/dataService';
+import { makeStyles } from '@mui/styles';
+
+const useStyles = makeStyles ({
+    orderbox :{
+        width: '842px',
+        height: 'auto',
+        background: '#FFFFFF 0% 0% no-repeat padding-box',
+        border: '1px solid #DCDCDC',
+        borderRadius: '1px',
+        opacity: '1',
+        marginLeft: '16%',
+        marginTop: '1%',
+        flexDirection: 'column',
+        flexWrap: 'wrap',
+        justifyContent: 'space-between',
+    },
+    orderauthor : {
+        width: '93px',
+        height: '12px',
+        textAlign: 'left',
+        font: 'normal normal normal 10px/12px Lato',
+        letterSpacing: '0px',
+        color: '#9D9D9D',
+        opacity: '1',
+    },
+    orderrate :{
+        marginTop: '8%',
+        marginLeft: '-1%',
+        font: 'normal normal normal 20px/13px Roboto',
+    },
+    orderprice :{
+        width: '36px',
+        height: '13px',
+        textAlign: 'left',
+        textDecoration: 'line-through',
+        font: 'normal normal normal 15px/13px Roboto',
+        letterSpacing: '0px',
+        color: '#878787',
+        opacity: '1',
+        marginLeft: '100%',
+        
+    },
+    orderalign :{
+        alignItems: 'flex-start',
+        flexDirection: 'column',
+        display: 'flex',
+        flexWrap: 'wrap',
+        position: 'relative',
+        marginLeft: '20%',
+        marginTop: '-16%',
+        alignItems: 'flex-start',
+        alignContent: 'flex-start',
+        textAlign: 'left',
+    },
+    orderimg :{
+        background: "transparent url('../../images/component.png') 0% 0% no-repeat padding-box"
+        
+    },
+})
 
 function Order() {
+    const classes = useStyles()
     const [bookOrder, setBookOrder] = useState([])
 
 

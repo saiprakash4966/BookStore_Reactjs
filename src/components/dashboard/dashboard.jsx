@@ -7,11 +7,84 @@ import BookHeader from '../books/bookHeader';
 import Book from '../books/book';
 import BookDetails from '../books/bookDetails';
 import Pagination from '../pagination/pagination';
-import './dashboard.css';
+import './dashboard.css';import { makeStyles } from '@mui/styles';
+
+
+
+
+const useStyles = makeStyles ({
+
+    footer : {
+        width: '100%',
+        height: '53px',
+        background: '#2E1D1E 0% 0% no-repeat padding-box',
+        marginTop: '4.5%',
+    },
+    
+    footerone : {
+        width: '70%',
+        height: '15px',
+        textAlign: 'left',
+        font: 'normal normal medium 12px/15px Lato',
+        letterSpacing: '0px',
+        color: '#FFFFFF',
+        opacity: '1',
+        marginLeft: '13%',
+        paddingTop: '0.1%',
+    },
+
+['@media only screen and (min-width:769px) and (max-width:1024px)'] :{
+        bookobj : {
+    
+            width: '80vw',
+            height: 'auto',
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'space-between',
+            alignContent: 'space-between',
+            alignItems: 'start',
+            position: 'relative',
+            left: '0%',
+    
+    
+        },
+    
+        paginations : {
+            width: '100%',
+            
+    
+        },
+    
+        footerone :{
+            width: '100%',
+            marginLeft: '27%',
+            marginTop: '3%',
+            flexWrap: 'wrap',
+            fontSize: '13px',
+        },
+    
+        footer : {
+            width: '100%',
+            height: '-10%',
+            background: '#2E1D1E 0% 0% no-repeat padding-box',
+            marginTop: '4.5%',
+        },
+    
+        
+    
+        
+    
+    
+    },
+
+
+
+})
 
 
 
 function Dashboard() {
+    const classes = useStyles()
 
    
     const [bookslist, setBookslist] = useState([]);
@@ -98,19 +171,22 @@ function Dashboard() {
 
 
 
+    const openBookBack = () => {
+        setBookObj(false)
+    }
 
 
 
 
     return (
         <div>
-            <Header  searchInput={searchBook} />
+            <Header  searchInput={searchBook}  className='headerpart'/>
             <BookHeader />
 
 
-            <div style={{ width: '80vw', height: 'auto', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', marginLeft: '210px', gap: '15px 20px', marginTop: '15px' }}>
+            <div  className={classes.bookobj} style={{ width: '80vw', height: 'auto', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', marginLeft: '160px', gap: '15px 20px', marginTop: '15px' }}>
                 {
-                    bookObj ? <BookDetails listenToTakeBookDetails={listenToTakeBookDetails} id={open._id} bookName={open.bookName} author={open.author} quantity={open.quantity} discountPrice={open.discountPrice} price={open.price} description={open.description} /> :
+                    bookObj ? <BookDetails  openBookBack={openBookBack} listenToTakeBookDetails={listenToTakeBookDetails} id={open._id} bookName={open.bookName} author={open.author} quantity={open.quantity} discountPrice={open.discountPrice} price={open.price} description={open.description} /> :
 
                         <div style={{ width: '70vw', height: 'auto', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', marginLeft: '35px', gap: '15px 20px', marginTop: '15px' }}>
                             {
@@ -151,7 +227,7 @@ function Dashboard() {
 
 
             {visible ? null :
-                (<Box style={{ marginLeft: '5px', marginTop: '150px' }}>
+                (<Box style={{ marginLeft: '10px', marginTop: '150px' }} className={classes.paginations}>
                     <Pagination
                         totalPosts={bookslist.length}
                         postsPerPage={PostperPage}
@@ -162,8 +238,8 @@ function Dashboard() {
                         onChange={(e, value) => currentPosts(value)} />
                 </Box>)
             }
-            <Box className='footer'>
-                <Box className='footerone'><p>Copyright @ 2020, Bookstore Private Limited.All Rights Reserved</p></Box>
+            <Box className={classes.footer}>
+                <Box className={classes.footerone}><p>Copyright @ 2020, Bookstore Private Limited.All Rights Reserved</p></Box>
             </Box>
 
 
